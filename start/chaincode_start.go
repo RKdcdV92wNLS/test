@@ -58,7 +58,7 @@ func (t *SimpleChaincode) Invoke(stub shim.ChaincodeStubInterface, function stri
 
 	if function == "write" {
 		var err error
-		err = stub.PutState(args[0], []byte[args[1]])
+		err = stub.PutState(args[0], []byte(args[1]))
 		if err != nil {
 			return nil, err
 		}
